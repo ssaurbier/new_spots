@@ -45,7 +45,7 @@ st.title("New Spots on Resy")
 
 # display table.
 if 'id' in df.columns:
-    df = df.drop(columns=['id', 'latitude', 'longitude'])
+    df = df[['name', 'city', 'cuisine', 'neighborhood', 'description', 'link', 'address', 'date']]
     st.write(df)
 
 # display map
