@@ -56,7 +56,7 @@ map_placeholder = st.empty()
 table_placeholder = st.empty()
 
 # display map.
-map_placeholder.write(folium_static(m, use_container_width=True))
+map_placeholder.write(folium_static(m))
 
 # display table.
 if 'id' in df.columns:
