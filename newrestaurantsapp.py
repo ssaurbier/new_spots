@@ -10,21 +10,7 @@ from streamlit_folium import folium_static
 # data setup
 
 
-# Initialize connection.
-conn_string = (
-    f"dbname='{st.secrets['database']['database']}' "
-    f"user='{st.secrets['database']['username']}' "
-    f"host='{st.secrets['database']['host']}' "
-    f"password='{st.secrets['database']['password']}' "
-    f"port='{st.secrets['database']['port']}'"
-)
-conn = psycopg2.connect(conn_string)
-
-# Perform query.
-cur = conn.cursor()
-cur.execute('SELECT * FROM mytable;')
-rows = cur.fetchall()
-df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+df = pd.read_csv('restaurants.csv')
 
 # Filter out data older than 60 days
 today = datetime.today()
