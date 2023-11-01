@@ -11,7 +11,7 @@ from streamlit_folium import folium_static
 
 
 df = pd.read_csv('restaurants.csv')
-df_table = df[['name,' 'city', 'cuisine', 'neighborhood', 'description', 'link', 'address', 'date']]
+df_table = df[['name', 'city', 'cuisine', 'neighborhood', 'description', 'link', 'address', 'date']]
 
 # Filter out data older than 60 days
 today = datetime.today()
