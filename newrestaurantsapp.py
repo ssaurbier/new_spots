@@ -40,25 +40,15 @@ for _, row in df.iterrows():
 
 
 
-
+# title
 st.title("New Spots on Resy")
-
-# container and placeholders for the map and table. This only works if you can't read this code.
-st.markdown("""
-<div class="container">
-    <div class="map-container" class="folium-map leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"></div>
-    <div class="table-container" class="dvn-scroller glideDataEditor"></div>
-</div>
-""", unsafe_allow_html=True)
-
-# placeholders for the map and table.
-map_placeholder = st.empty()
-table_placeholder = st.empty()
-
-# display map.
-map_placeholder.write(folium_static(m))
 
 # display table.
 if 'id' in df.columns:
     df = df.drop(columns=['id'])
-table_placeholder.write(df)
+    st.write(df)
+
+# display map
+st.write(folium_static(m))
+
+
