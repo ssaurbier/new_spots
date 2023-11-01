@@ -11,6 +11,7 @@ from streamlit_folium import folium_static
 
 
 df = pd.read_csv('restaurants.csv')
+df_table = df[['name,' 'city', 'cuisine', 'neighborhood', 'description', 'link', 'address', 'date']]
 
 # Filter out data older than 60 days
 today = datetime.today()
@@ -44,9 +45,9 @@ for _, row in df.iterrows():
 st.title("New Spots on Resy")
 
 # display table.
-if 'id' in df.columns:
-    df = df.drop(columns=['id'])
-    st.write(df)
+if 'id' in df_table.columns:
+    df_table = df_table.drop(columns=['id'])
+    st.write(df_table)
 
 # display map
 folium_static(m)
