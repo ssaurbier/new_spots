@@ -24,9 +24,11 @@ df = df.dropna(subset=['latitude', 'longitude'])
 m = folium.Map(location=[39, -96.5], zoom_start=4)  
 
 for _, row in df.iterrows():
+    popup_content = f'<a href="{row["link"]}" target="_blank">{row["name"]}</a>'
+    popup = folium.Popup(popup_content, max_width=300)
     folium.Marker(
         location=[row['latitude'], row['longitude']],
-        popup=row['name']
+        popup=popup
     ).add_to(m)
 
 
