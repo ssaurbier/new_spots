@@ -14,9 +14,7 @@ def fetch_data():
     conn = psycopg2.connect(
         database=st.secrets["database"]["database"], 
         user=st.secrets["database"]["user"], 
-        password=st.secrets["database"]["password"], 
-        host=st.secrets["database"]["host"], 
-        port=st.secrets["database"]["port"]
+        password=st.secrets["database"]["password"]
     )
 
     query = "SELECT * FROM restaurants;"
