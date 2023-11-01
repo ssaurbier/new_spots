@@ -49,6 +49,6 @@ if 'id' in df.columns:
     st.write(df)
 
 # display map
-st.write(folium_static(m))
+folium_static(m)
 
 
