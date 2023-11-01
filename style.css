@@ -1,0 +1,23 @@
+/* Style for the main container that holds both the map and the table */
+.container {
+    display: flex;
+    align-items: flex-start; /* To align both items at the top */
+    gap: 2%; /* Space between the map and the table */
+}
+
+/* Style for the map container */
+.map-container {
+    flex: 50%; /* Take up half the width of the container */
+}
+
+/* Style for the table container */
+.table-container {
+    flex: 50%; /* Take up half the width of the container */
+}
+
+/* Additional styles to handle any overflow and to ensure visibility */
+.map-container iframe, .table-container .stTable {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    overflow: auto;
+}
